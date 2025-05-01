@@ -1,0 +1,4 @@
+flask
+sentence-transformers
+huggingface_hub[hf_xet]
+hf_xet

@@ -1,0 +1,206 @@
+{% extends "base_user.html" %}
+
+{% block title %}Northern Border University | Home{% endblock %}
+
+{% block body %}
+
+<!-- Masthead -->
+<header class="masthead">
+  <div class="container text-center">
+    <div class="masthead-heading">Clear vision, inspiring mission and ambitious objectives</div>
+    <a class="btn btn-primary btn-xl text-uppercase mt-4" href="#colleges">Tell Me More</a>
+  </div>
+</header>
+
+<!-- Colleges Section -->
+<!-- <section class="page-section bg-light" id="colleges">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-heading text-uppercase">IT Colleges</h2>
+      <h3 class="section-subheading text-muted">Where innovation meets hard work</h3>
+    </div>
+    <div class="row g-4">
+      {% for row in datas %}
+      <div class="col-sm-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <a href="{{ url_for('main.college_detail', college_id=row.CID) }}" class="text-decoration-none">
+            <div class="position-relative">
+              <img src="{{ url_for('static', filename='images/colleges/' ~ row.IMAGE) }}"
+                   class="card-img-top" alt="{{ row.CNAME }}">
+              <div class="portfolio-hover position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-dark bg-opacity-50 text-white">
+                <i class="fas fa-plus fa-2x"></i>
+              </div>
+            </div>
+          </a>
+          <div class="card-body text-center">
+            <h5 class="card-title mb-1">{{ row.CNAME }}</h5>
+            <p class="card-text text-muted mb-0">Dean: {{ row.DNAME }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section> -->
+
+<!-- Colleges Section -->
+<section class="page-section bg-light" id="colleges">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-heading text-uppercase">IT Colleges</h2>
+      <h3 class="section-subheading text-muted">Where innovation meets hard work</h3>
+    </div>
+    <div class="row g-4">
+      {% for row in datas %}
+      <div class="col-sm-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <a href="{{ url_for('main.college_detail', college_id=row.CID) }}" class="text-decoration-none">
+            <div class="position-relative">
+              <img src="{{ url_for('static', filename='images/colleges/' ~ row.IMAGE) }}" class="card-img-top"
+                alt="{{ row.CNAME }}">
+              <div
+                class="portfolio-hover position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-dark bg-opacity-50 text-white">
+                <i class="fas fa-plus fa-2x"></i>
+              </div>
+            </div>
+          </a>
+          <div class="card-body text-center">
+            <h5 class="card-title mb-1">{{ row.CNAME }}</h5>
+            <p class="card-text text-muted mb-0">Dean: {{ row.DNAME }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Show More Button -->
+    <div class="text-center mt-4">
+      <a href="{{ url_for('main.college_list') }}" class="btn btn-outline-primary btn-lg">
+        <i class="fas fa-layer-group me-2"></i> View All Colleges
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="page-section" id="services">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-heading text-uppercase">Services</h2>
+      <h3 class="section-subheading text-muted">University offers several services to students.</h3>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-6">
+        <span class="fa-stack fa-4x">
+          <i class="fas fa-circle fa-stack-2x text-primary"></i>
+          <i class="fas fa-graduation-cap fa-stack-1x fa-inverse"></i>
+        </span>
+        <h4 class="my-3">Blackboard</h4>
+        <p class="text-muted">A system for managing education, tracking students, and enhancing learning outside
+          lectures.</p>
+      </div>
+      <div class="col-md-6">
+        <span class="fa-stack fa-4x">
+          <i class="fas fa-circle fa-stack-2x text-primary"></i>
+          <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+        </span>
+        <h4 class="my-3">E-learning</h4>
+        <p class="text-muted">Transforms traditional education into interactive and creative digital experiences.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="page-section" id="about">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-heading text-uppercase">About</h2>
+      <h3 class="section-subheading text-muted">A brief history of NBU.</h3>
+    </div>
+    <ul class="timeline">
+      <li>
+        <div class="timeline-image"><img class="rounded-circle img-fluid"
+            src="{{ url_for('static', filename='images/about/1.jpg') }}" alt="..." /></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h4>1993</h4>
+            <h4 class="subheading">Our Humble Beginnings</h4>
+          </div>
+          <div class="timeline-body">
+            <p class="text-muted">The university was founded by top Saudi engineers.</p>
+          </div>
+        </div>
+      </li>
+      <li class="timeline-inverted">
+        <div class="timeline-image"><img class="rounded-circle img-fluid"
+            src="{{ url_for('static', filename='images/about/2.jpg') }}" alt="..." /></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h4>2011</h4>
+            <h4 class="subheading">IT Colleges Founded</h4>
+          </div>
+          <div class="timeline-body">
+            <p class="text-muted">Security, Software, and AI colleges established.</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-image"><img class="rounded-circle img-fluid"
+            src="{{ url_for('static', filename='images/about/3.jpg') }}" alt="..." /></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h4>2015</h4>
+            <h4 class="subheading">Higher Studies</h4>
+          </div>
+          <div class="timeline-body">
+            <p class="text-muted">Postgraduate programs started with 45 students.</p>
+          </div>
+        </div>
+      </li>
+      <li class="timeline-inverted">
+        <div class="timeline-image"><img class="rounded-circle img-fluid"
+            src="{{ url_for('static', filename='images/about/4.jpg') }}" alt="..." /></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h4>2020</h4>
+            <h4 class="subheading">Award-Winning</h4>
+          </div>
+          <div class="timeline-body">
+            <p class="text-muted">Selected as best university by the Ministry of Higher Education.</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section class="page-section bg-light" id="team">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
+      <h3 class="section-subheading text-muted">Meet our heroes</h3>
+    </div>
+    <div class="row text-center">
+      <div class="col-lg-4">
+        <img class="mx-auto rounded-circle mb-3" height="40" width="40"
+          src="{{ url_for('static', filename='images/team/1.jpg') }}" alt="..." />
+        <h5>University President</h5>
+      </div>
+      <div class="col-lg-4">
+        <img class="mx-auto rounded-circle mb-3" height="40" width="40"
+          src="{{ url_for('static', filename='images/team/2.jpg') }}" alt="..." />
+        <h5>Dean of Science</h5>
+      </div>
+      <div class="col-lg-4">
+        <img class="mx-auto rounded-circle mb-3" height="40" width="40"
+          src="{{ url_for('static', filename='images/team/3.jpg') }}" alt="..." />
+        <h5>Student Affairs</h5>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

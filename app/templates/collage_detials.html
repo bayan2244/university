@@ -1,0 +1,32 @@
+{% extends "base_user.html" %}
+
+{% block title %}{{ college.CNAME }} | College Details{% endblock %}
+
+{% block body %}
+<section class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        <!-- College Card -->
+        <div class="card shadow-lg border-0">
+          <img src="{{ url_for('static', filename='images/colleges/' ~ college.IMAGE) }}"
+               class="card-img-top" alt="{{ college.CNAME }}" style="object-fit: cover; height: 300px;">
+          <div class="card-body">
+            <h2 class="card-title text-primary">{{ college.CNAME }}</h2>
+            <p class="text-muted mb-2"><strong>Dean:</strong> {{ college.DNAME }}</p>
+            <p class="mb-3">{{ college.SUMMARY }}</p>
+            <p class="text-muted"><strong>Contact:</strong> {{ college.CONTACT }}</p>
+
+            <!-- Back Button -->
+            <a href="{{ url_for('main.home') }}" class="btn btn-outline-primary mt-4">
+              <i class="fas fa-arrow-left me-2"></i>Back to Home
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

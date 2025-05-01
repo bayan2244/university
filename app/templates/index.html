@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block body %}
+<a href = "/">Home</a>
+  <h3 class='text-center text-muted mb-3'>NBU colleges</h3>
+  <p class='text-right'><a href='{{url_for("add_college")}}' class='btn btn-success '>+Add College</a></p>
+  <table class='table table-bordered table-striped'>
+    <thead>
+      <th>SNo</th>
+      <th>College name</th>
+      <th>Dean</th>
+     <th>Image</th>
+     <th>Summary</th>
+     <th>Contact</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </thead>
+    <tbody>
+      {% for row in datas %}
+        <tr>
+          <td>{{loop.index}}</td>
+          <td>{{row.CNAME}}</td>
+          <td>{{row.DNAME}}</td>
+          <td>{{row.IMAGE}}</td>
+          <td>{{row.SUMMARY}}</td>
+          <td>{{row.CONTACT}}</td>
+          <td><a href='{{url_for("edit_college",cid=row.CID)}}' class='btn btn-primary'>Edit</a></td>
+          <td><a href='{{url_for("delete_college",cid=row.CID)}}' class='btn btn-danger' onclick='return confirm("Are You Sure")'>Delete</a></td>
+        </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+{% endblock %}
